@@ -1,0 +1,10 @@
+span {
+  text-decoration: none;
+  color: red;
+}
+span:hover {
+  color: rgb(163, 0, 0);
+}
+span:active {
+  color: rgb(163, 0, 0);
+}

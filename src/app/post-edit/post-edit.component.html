@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-6">
+    <h3 *ngIf="editMode === false">Post Add</h3>
+    <h3 *ngIf="editMode === true">Post Edit</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Title</label>
+        <input
+          formControlName="title"
+          class="form-control"
+          type="text"
+          placeholder="Enter Title for the Wallpaper"
+        />
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea
+          formControlName="description"
+          class="form-control"
+          type="text"
+          placeholder="Enter Description of the Wallpaper"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label>Image Path</label>
+        <input
+          formControlName="imagePath"
+          type="text"
+          class="form-control"
+          placeholder="Enter link to you wallpaper(Image Preview Below)"
+        />
+        <img src="{{ form.value.imagePath }}" class="img-responsive" />
+      </div>
+      <button class="btn btn-success" [disabled]="form.invalid">Save</button> |
+      <input type="reset" class="btn btn-primary" />
+    </form>
+  </div>
+</div>
